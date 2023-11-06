@@ -10,4 +10,6 @@ public class UiController {
 
     @GetMapping("/menu")
     public String getMenu() {return  "menu";}
+    @GetMapping("/facility")
+    public String getFacility() {return  "facility";}
 }
