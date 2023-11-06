@@ -1,7 +1,7 @@
 .section-banner {
     width: 100%;
     height: 100vh;
-    background-image: url("/static/images/banner.jpg");
+    background-image: url("../images/banner.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -40,7 +40,7 @@
     flex-direction: column;
 }
 
-.section-story h2, .section-location h2 {
+.section-story h2, .section-location h2, .section-cuisine h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 3rem;
 }
@@ -59,7 +59,7 @@
 .section-story-img {
     width: 50%;
     height: 100%;
-    background-image: url("/static/images/interior.jpg");
+    background-image: url("../images/interior.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -82,7 +82,7 @@
     line-height: 2rem;
 }
 
-.section-story-about a, .section-location a {
+.section-story-about a, .section-location a, .section-cuisine-link {
     text-decoration: none;
     background-color: black;
     color: white;
@@ -95,7 +95,7 @@
     justify-content: center;
 }
 
-.section-location {
+.section-location, .section-cuisine {
     width: 100%;
     height: 100vh;
     margin: auto;
@@ -133,28 +133,129 @@
 }
 
 .item1 {
-    background-image: url("/static/images/colombo.jpg");
+    background-image: url("../images/colombo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .item2 {
-    background-image: url("/static/images/kandy.jpg");
+    background-image: url("../images/kandy.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .item3 {
-    background-image: url("/static/images/nuwara-eliya.jpg");
+    background-image: url("../images/nuwara-eliya.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .item4 {
-    background-image: url("/static/images/park-street.jpg");
+    background-image: url("../images/galle.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.cuisine-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cuisine-row {
+    width: 100%;
+    display: flex;
+}
+
+.cuisine-item {
+    width: 50%;
+    display: flex;
+}
+
+.cuisine-item-image {
+    width: 50%;
+    height: 300px;
+}
+
+.cuisine-item-text {
+    width: 50%;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.description {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+}
+
+.cuisine-item-text a {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-decoration: none;
+    width: 10rem;
+    height: 2rem;
+    color: black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    transition: all 300ms ease;
+}
+
+.cuisine-item-text a:hover {
+    border-radius: 50px;
+    border: 1px solid black
+}
+
+.text-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.section-cuisine-link {
+    padding: 12px 0;
+}
+
+.cuisineImg01 {
+    background-image: url("../images/srilankan.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.cuisineImg02 {
+    background-image: url("../images/indian.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.cuisineImg03 {
+    background-image: url("../images/chinese.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.cuisineImg04 {
+    background-image: url("../images/french.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
