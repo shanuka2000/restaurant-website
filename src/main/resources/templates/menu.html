@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signature Cuisine | Menu</title>
+    <link href="../static/css/globals.css" rel="stylesheet" th:href="@{/css/globals.css}" />
+    <link href="../static/css/nav.css" rel="stylesheet" th:href="@{/css/nav.css}" />
+    <link href="../static/css/menu.css" rel="stylesheet" th:href="@{/css/menu.css}" />
+    <link href="../static/css/footer.css" rel="stylesheet" th:href="@{/css/footer.css}" />
+</head>
+<body>
+    <header class="nav-header">
+        <nav class="nav-wrapper">
+            <div class="nav-logo-wrapper">
+                <a href="/" class="nav-logo">Signature Cuisine</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/menu" style="font-weight: bold">Our Menu</a></li>
+                <li><a href="#">Facilities</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Reservation</a></li>
+            </ul>
+            <div class="nav-user-opt">
+                <ion-icon name="notifications-outline"></ion-icon>
+                <ion-icon name="person-outline"></ion-icon>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="section-heading">
+            <h1>The Tastiest Food Menu in Town</h1>
+        </section>
+        <section class="section-menu">
+            <ul class="category">
+                <li class="category-heading">
+                    <button class="controlBtn">
+                        <ion-icon name="chevron-expand-outline"></ion-icon>
+                        <span>Our Sri Lankan Menu</span>
+                    </button>
+                </li>
+                <ul class="category-sec">
+                    <li class="subCategory-heading">
+                        <button class="controlBtn">
+                            <ion-icon name="chevron-expand-outline"></ion-icon>
+                            <span>Appetizer</span>
+                        </button>
+
+                    </li>
+                    <ul class="category-item">
+                        <li>
+                            <p>Mini Mutton Patties</p>
+                            <hr class="hr"/>
+                            <p>Rs. 1,450</p>
+                        </li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer-wrapper">
+        <div class="footer-socials">
+            <ion-icon name="logo-facebook"></ion-icon>
+            <ion-icon name="logo-instagram"></ion-icon>
+            <ion-icon name="logo-youtube"></ion-icon>
+        </div>
+        <div class="footer-rights">
+            <small>&copy; 2023 Signature Cuisine. All Rights Reserved</small>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

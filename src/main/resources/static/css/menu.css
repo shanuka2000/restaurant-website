@@ -1,0 +1,98 @@
+.section-heading {
+    width: 100%;
+    height: 50vh;
+    background-image: url("../images/menu.jpg");
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.section-heading h1 {
+    color: white;
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+.section-menu {
+    height: fit-content;
+    padding: 2rem 2rem;
+
+}
+
+.category {
+    list-style: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.21);
+    padding-bottom: 1rem;
+}
+
+.category:last-child {
+    border: none;
+    padding-bottom: 0;
+    padding-top: 1rem;
+}
+
+.category-heading {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.category-sec {
+    margin-left: 8rem;
+    list-style: none;
+}
+
+.controlBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.controlBtn ion-icon {
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.controlBtn:hover ion-icon {
+
+    background-color: rgba(75, 85, 99, 0.17);
+}
+
+.subCategory-heading {
+    font-size: 1.5rem;
+    display: flex;
+}
+
+.category-item {
+    list-style: none;
+    margin-left: 8rem;
+}
+
+.category-item li {
+    padding: 0 10px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.category-item li p:first-child {
+    padding-right: 10px;
+}
+
+.category-item li p:last-child {
+    padding-left: 10px;
+}
+
+.hr {
+    flex: 1;
+    border-top: 4px dotted #4b5563;
+}
