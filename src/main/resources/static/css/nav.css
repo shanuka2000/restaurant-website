@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;500;600;700&display=swap');
+
+.nav-header {
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+.nav-wrapper {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 2rem;
+}
+
+.nav-logo {
+    font-family: 'Edu TAS Beginner', cursive;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    user-select: none;
+}
+
+.nav-logo-wrapper {
+    width: 25%;
+}
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.nav-links li {
+    list-style: none;
+    transition: transform 200ms ease;
+}
+
+.nav-links li:hover {
+    transform: translateY(-2px);
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-user-opt {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    font-size: 20px;
+}
+
