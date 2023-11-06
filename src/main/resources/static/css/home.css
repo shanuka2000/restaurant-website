@@ -40,7 +40,7 @@
     flex-direction: column;
 }
 
-.section-story h2, .section-location h2, .section-cuisine h2 {
+.section-story h2, .section-location h2, .section-cuisine h2, .section-contact h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 3rem;
 }
@@ -95,7 +95,7 @@
     justify-content: center;
 }
 
-.section-location, .section-cuisine {
+.section-location, .section-cuisine, .section-contact {
     width: 100%;
     height: 100vh;
     margin: auto;
@@ -107,6 +107,10 @@
 
 .section-cuisine {
     height: 110vh;
+}
+
+.section-contact {
+    height: 50vh;
 }
 
 .section-location-wrapper {
@@ -293,4 +297,73 @@
     color: black;
     text-decoration: none;
     font-weight: 500;
+}
+
+.section-contact-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.contact-item {
+    width: 20rem;
+    height: 10rem;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: rgba(75, 85, 99, 0.16);
+    border-radius: 30px;
+}
+
+.contact-item ion-icon {
+    font-size: 30px;
+}
+
+.contact-item:first-child ion-icon {
+    animation: moveForward 0.8s linear forwards infinite;
+}
+
+.contact-item:last-child ion-icon {
+    animation: ringing 1.5s infinite ease-in-out;
+}
+
+@keyframes moveForward {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(8px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes ringing {
+    0% {
+        transform: rotate(0) scale(1) skew(1deg)
+    }
+    10% {
+        transform: rotate(-25deg) scale(1) skew(1deg)
+    }
+    20% {
+        transform: rotate(25deg) scale(1) skew(1deg)
+    }
+    30% {
+        transform: rotate(-25deg) scale(1) skew(1deg)
+    }
+    40% {
+        transform: rotate(25deg) scale(1) skew(1deg)
+    }
+    50% {
+        transform: rotate(0) scale(1) skew(1deg)
+    }
+    100% {
+        transform: rotate(0) scale(1) skew(1deg)
+    }
 }
