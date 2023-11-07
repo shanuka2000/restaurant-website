@@ -7,6 +7,7 @@
     <link href="../static/css/nav.css" rel="stylesheet" th:href="@{/css/nav.css}" />
     <link href="../static/css/menu.css" rel="stylesheet" th:href="@{/css/menu.css}" />
     <link href="../static/css/footer.css" rel="stylesheet" th:href="@{/css/footer.css}" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="nav-header">
@@ -31,30 +32,7 @@
             <h1>The Tastiest Food Menu in Town</h1>
         </section>
         <section class="section-menu">
-            <ul class="category">
-                <li class="category-heading">
-                    <button class="controlBtn">
-                        <ion-icon name="chevron-expand-outline"></ion-icon>
-                        <span>Our Sri Lankan Menu</span>
-                    </button>
-                </li>
-                <ul class="category-sec">
-                    <li class="subCategory-heading">
-                        <button class="controlBtn">
-                            <ion-icon name="chevron-expand-outline"></ion-icon>
-                            <span>Appetizer</span>
-                        </button>
 
-                    </li>
-                    <ul class="category-item">
-                        <li>
-                            <p>Mini Mutton Patties</p>
-                            <hr class="hr"/>
-                            <p>Rs. 1,450</p>
-                        </li>
-                    </ul>
-                </ul>
-            </ul>
         </section>
     </main>
     <footer class="footer-wrapper">
@@ -67,6 +45,7 @@
             <small>&copy; 2023 Signature Cuisine. All Rights Reserved</small>
         </div>
     </footer>
+    <script src="../static/js/menu.js" th:src="@{/js/menu.js}"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

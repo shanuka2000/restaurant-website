@@ -1,0 +1,26 @@
+{
+  "cuisines": [
+    {
+      "name": "Sri Lankan",
+      "categories": [
+        {
+          "name": "Starters",
+          "items": [
+            {
+              "name": "Mini Mutton Patties",
+              "price": "Rs. 1,450"
+            },
+            {
+              "name": "Tuna Fish Cutlets",
+              "price": "Rs. 1,100"
+            },
+            {
+              "name": "Golden fried sweet corn cake",
+              "price": "Rs. 1,650"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
