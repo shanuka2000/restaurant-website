@@ -13,10 +13,208 @@
             {
               "name": "Tuna Fish Cutlets",
               "price": "Rs. 1,100"
+            }
+          ]
+        },
+        {
+          "name": "Mains",
+          "items": [
+            {
+              "name": "Rice and Curry",
+              "price": "Rs. 2,000"
             },
             {
-              "name": "Golden fried sweet corn cake",
+              "name": "Biryani",
+              "price": "Rs. 1,800"
+            }
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            {
+              "name": "Watalappan",
+              "price": "Rs. 500"
+            },
+            {
+              "name": "Curd and Treacle",
+              "price": "Rs. 450"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Indian",
+      "categories": [
+        {
+          "name": "Starters",
+          "items": [
+            {
+              "name": "Paneer Tikka",
+              "price": "Rs. 1,200"
+            },
+            {
+              "name": "Samosas",
+              "price": "Rs. 900"
+            }
+          ]
+        },
+        {
+          "name": "Mains",
+          "items": [
+            {
+              "name": "Butter Chicken",
+              "price": "Rs. 1,800"
+            },
+            {
+              "name": "Biryani",
+              "price": "Rs. 1,500"
+            }
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            {
+              "name": "Gulab Jamun",
+              "price": "Rs. 600"
+            },
+            {
+              "name": "Rasgulla",
+              "price": "Rs. 500"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "French",
+      "categories": [
+        {
+          "name": "Starters",
+          "items": [
+            {
+              "name": "Escargot",
+              "price": "Rs. 1,950"
+            },
+            {
+              "name": "French Onion Soup",
+              "price": "Rs. 1,200"
+            }
+          ]
+        },
+        {
+          "name": "Mains",
+          "items": [
+            {
+              "name": "Coq au Vin",
+              "price": "Rs. 2,300"
+            },
+            {
+              "name": "Beef Bourguignon",
+              "price": "Rs. 2,500"
+            }
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            {
+              "name": "Crème Brûlée",
+              "price": "Rs. 1,500"
+            },
+            {
+              "name": "Tarte Tatin",
+              "price": "Rs. 1,800"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chinese",
+      "categories": [
+        {
+          "name": "Starters",
+          "items": [
+            {
+              "name": "Spring Rolls",
+              "price": "Rs. 950"
+            },
+            {
+              "name": "Dim Sum",
+              "price": "Rs. 1,100"
+            }
+          ]
+        },
+        {
+          "name": "Mains",
+          "items": [
+            {
+              "name": "Kung Pao Chicken",
+              "price": "Rs. 1,800"
+            },
+            {
+              "name": "Beef with Broccoli",
               "price": "Rs. 1,650"
+            }
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            {
+              "name": "Fortune Cookies",
+              "price": "Rs. 500"
+            },
+            {
+              "name": "Mango Pudding",
+              "price": "Rs. 750"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Italian",
+      "categories": [
+        {
+          "name": "Starters",
+          "items": [
+            {
+              "name": "Bruschetta",
+              "price": "Rs. 900"
+            },
+            {
+              "name": "Caprese Salad",
+              "price": "Rs. 1,200"
+            }
+          ]
+        },
+        {
+          "name": "Mains",
+          "items": [
+            {
+              "name": "Spaghetti Carbonara",
+              "price": "Rs. 1,600"
+            },
+            {
+              "name": "Margherita Pizza",
+              "price": "Rs. 1,350"
+            }
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            {
+              "name": "Tiramisu",
+              "price": "Rs. 1,400"
+            },
+            {
+              "name": "Panna Cotta",
+              "price": "Rs. 1,100"
             }
           ]
         }
