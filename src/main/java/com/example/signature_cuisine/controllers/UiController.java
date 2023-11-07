@@ -16,4 +16,8 @@ public class UiController {
     public String getGallery() {return  "gallery";}
     @GetMapping("/reservation")
     public String getReservation() {return  "reservation";}
+    @GetMapping("/sign-in")
+    public String getSignIn() {return  "signin";}
+    @GetMapping("/sign-up")
+    public String getSignUp() {return  "signup";}
 }

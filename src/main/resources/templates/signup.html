@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signature Cuisine | Sign-up</title>
+  <link href="../static/css/globals.css" rel="stylesheet" th:href="@{/css/globals.css}" />
+  <link href="../static/css/auth.css" rel="stylesheet" th:href="@{/css/auth.css}" />
+</head>
+<body>
+<main class="page-wrapper">
+  <section class="auth-container">
+    <div class="img-wrapper img02"></div>
+    <form class="form-wrapper">
+      <h2>Join Signature Cuisine</h2>
+      <div class="form-block">
+        <label>Full Name
+          <input type="text" name="name" required class="cusInput"/>
+        </label>
+      </div>
+      <div class="form-block">
+        <label>Email
+          <input type="email" name="email" required class="cusInput"/>
+        </label>
+      </div>
+      <div class="form-block">
+        <label>Password
+          <input type="password" name="password" required class="cusInput"/>
+        </label>
+      </div>
+      <div class="form-block btnWrapper">
+        <input type="submit" name="submit" value="Sign in" class="btn" />
+      </div>
+      <div class="form-block">
+        <p>Already joined? <a href="/sign-in">Sign in</a></p>
+      </div>
+    </form>
+  </section>
+</main>
+</body>
+</html>

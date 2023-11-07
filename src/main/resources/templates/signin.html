@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Signature Cuisine | Facilities</title>
+    <title>Signature Cuisine | Sign-in</title>
     <link href="../static/css/globals.css" rel="stylesheet" th:href="@{/css/globals.css}" />
     <link href="../static/css/auth.css" rel="stylesheet" th:href="@{/css/auth.css}" />
 </head>
 <body>
     <main class="page-wrapper">
         <section class="auth-container">
-            <div class="img-wrapper"></div>
+            <div class="img-wrapper img01"></div>
             <form class="form-wrapper">
                 <h2>Welcome Back</h2>
                 <p>Let's get you Signed in.</p>
@@ -23,11 +23,11 @@
                         <input type="password" name="password" required class="cusInput"/>
                     </label>
                 </div>
-                <div class="form-block">
-                    <input type="submit" name="submit" value="Sign in">
+                <div class="form-block btnWrapper">
+                    <input type="submit" name="submit" value="Sign in" class="btn">
                 </div>
                 <div class="form-block">
-                    <p>Not Registered to Signature Cuisine yet? <a href="/register">Register</a></p>
+                    <p>Not Registered to Signature Cuisine yet? <a href="/sign-up">Register</a></p>
                 </div>
             </form>
         </section>
