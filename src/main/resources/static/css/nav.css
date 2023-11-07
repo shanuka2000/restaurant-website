@@ -56,6 +56,18 @@
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;
-    font-size: 20px;
+}
+
+.nav-user-opt a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.nav-user-opt a:last-child {
+    background-color: black;
+    color: white;
+    padding: 7px 15px;
+    border-radius: 10px;
 }
 
