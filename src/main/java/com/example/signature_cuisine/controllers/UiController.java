@@ -12,4 +12,8 @@ public class UiController {
     public String getMenu() {return  "menu";}
     @GetMapping("/facility")
     public String getFacility() {return  "facility";}
+    @GetMapping("/gallery")
+    public String getGallery() {return  "gallery";}
+    @GetMapping("/reservation")
+    public String getReservation() {return  "reservation";}
 }
