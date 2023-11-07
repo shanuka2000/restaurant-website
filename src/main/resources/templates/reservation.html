@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signature Cuisine | Reservation</title>
+    <link href="../static/css/globals.css" rel="stylesheet" th:href="@{/css/globals.css}" />
+    <link href="../static/css/nav.css" rel="stylesheet" th:href="@{/css/nav.css}" />
+    <link href="../static/css/reservation.css" rel="stylesheet" th:href="@{/css/reservation.css}" />
+    <link href="../static/css/footer.css" rel="stylesheet" th:href="@{/css/footer.css}" />
+</head>
+<body>
+    <header class="nav-header">
+        <nav class="nav-wrapper">
+            <div class="nav-logo-wrapper">
+                <a href="/" class="nav-logo">Signature Cuisine</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/menu">Our Menu</a></li>
+                <li><a href="/facility">Facilities</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/reservation" style="font-weight: bold">Reservation</a></li>
+            </ul>
+            <div class="nav-user-opt">
+                <ion-icon name="notifications-outline"></ion-icon>
+                <ion-icon name="person-outline"></ion-icon>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="section-heading">
+            <h1>Let's get your spot secured</h1>
+        </section>
+        <section class="section-form">
+            <form>
+                <div class="form-input-block">
+                    <label>
+                        Full Name *
+                        <input type="text" name="fullName" required class="customInput"/>
+                    </label>
+                </div>
+                <div class="form-input-block">
+                    <label>Contact Number *
+                        <input type="tel" name="mobile" required pattern="^0[1-9][0-9]{8}$" class="customInput"/>
+                    </label>
+                </div>
+                <div class="form-input-block">
+                    <label>Email Address *
+                        <input type="email" name="email" required class="customInput" />
+                    </label>
+                </div>
+                <div class="form-input-block">
+                    <label>Number of People *
+                        <input type="number" name="numGuest" max="10" min="1" required class="customInput"/>
+                    </label>
+                </div>
+                <div class="form-input-block">
+                    <label>Reservation date *
+                        <input type="date" name="date" required class="customInput"/>
+                    </label>
+                </div>
+                <div class="form-input-block">
+                    <label>Reservation type *
+                        <select class="customInput">
+                            <option selected value="n/a">Select type</option>
+                            <option value="Lunch">Lunch (From 11.00 AM to 3.00 PM)</option>
+                            <option value="Dinner">Dinner (From 5.30 PM to 11.30 PM)</option>
+                       </select>
+                    </label>
+                </div>
+                <div class="form-input-block">
+                    <label>Special Requests
+                        <textarea rows="10" cols="50" class="customInput" id="textarea"></textarea>
+                    </label>
+                </div>
+                <div class="form-input-block">
+                    <input type="submit" name="submit" value="Book Table"/>
+                </div>
+            </form>
+            <div class="summary">
+                <h4>Booking Summary</h4>
+                <div class="summary-text">
+                    <p>Full Name: <span>Shanuka Peiris</span></p>
+                    <p>Contact Number: <span>0710563822</span></p>
+                    <p>Email Address: <span>shanukapeiris@gmail.com</span></p>
+                    <p>Number of Guest: <span>10</span></p>
+                    <p>Reservation Date: <span>11/07/2023</span></p>
+                    <p>Reservation type: <span>Lunch</span></p>
+                    <p>Special Requests: <span>n/a</span></p>
+                    <div class="availability-wrapper">
+                        <button>Check Availability</button>
+                        <p class="availability-hide">Available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer-wrapper">
+        <div class="footer-socials">
+            <ion-icon name="logo-facebook"></ion-icon>
+            <ion-icon name="logo-instagram"></ion-icon>
+            <ion-icon name="logo-youtube"></ion-icon>
+        </div>
+        <div class="footer-rights">
+            <small>&copy; 2023 Signature Cuisine. All Rights Reserved</small>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
