@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signature Cuisine | Admin System</title>
+    <link href="../static/css/globals.css" rel="stylesheet" th:href="@{/css/globals.css}" />
+    <link href="../static/css/staff.css" rel="stylesheet" th:href="@{/css/staff.css}" />
+</head>
+<body>
+  <aside>
+    <h1 class="nav-logo">Signature Cuisine</h1>
+    <p>- Admin Center -</p>
+    <ul class="side-links">
+      <li>
+          Dashboard
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+      </li>
+        <li>
+            Customer Query
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+        </li>
+      <li>
+          About
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+      </li>
+    </ul>
+  </aside>
+  <div class="container-right">
+      <nav>
+          <form>
+              <input type="text" name="search" placeholder="Type to search"/>
+              <ion-icon name="search-outline"></ion-icon>
+          </form>
+          <button>
+              <ion-icon name="notifications-outline"></ion-icon>
+          </button>
+          <button>
+              <ion-icon name="person-circle-outline"></ion-icon>
+          </button>
+          <div class="user-details-wrapper hidden">
+              <div class="avatar">A</div>
+              <h3>User #</h3>
+              <div class="use-details">
+                  <p>Clearance Level: <span>Staff</span></p>
+              </div>
+          </div>
+      </nav>
+      <main>
+          <section class="quick-numbers">
+              <div class="quick-numbers-card">
+                  <h2>Total users</h2>
+                  <h2>12</h2>
+              </div>
+              <div class="quick-numbers-card">
+                  <h2>Bookings today</h2>
+                  <h2>12</h2>
+              </div>
+              <div class="quick-numbers-card">
+                  <h2>Tickets</h2>
+                  <h2>12</h2>
+              </div>
+          </section>
+          <section class="query-wrapper">
+              <h2>Customer Query</h2>
+              <div class="query-item">
+
+              </div>
+          </section>
+          <section class="furtherImpl">
+              <ion-icon name="settings-outline"></ion-icon>
+              <h2>More tools are under development</h2>
+              <ion-icon name="settings-outline"></ion-icon>
+          </section>
+      </main>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
