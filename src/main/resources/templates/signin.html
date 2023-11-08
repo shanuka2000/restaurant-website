@@ -10,17 +10,17 @@
     <main class="page-wrapper">
         <section class="auth-container">
             <div class="img-wrapper img01"></div>
-            <form class="form-wrapper">
+            <form th:action="@{/user/authenticate}" method="post" class="form-wrapper">
                 <h2>Welcome Back</h2>
                 <p>Let's get you Signed in.</p>
                 <div class="form-block">
                     <label>Email
-                        <input type="email" name="email" required class="cusInput"/>
+                        <input type="email" id="email" name="email" required class="cusInput"/>
                     </label>
                 </div>
                 <div class="form-block">
                     <label>Password
-                        <input type="password" name="password" required class="cusInput"/>
+                        <input type="password" id="password" name="password" required class="cusInput"/>
                     </label>
                 </div>
                 <div class="form-block btnWrapper">

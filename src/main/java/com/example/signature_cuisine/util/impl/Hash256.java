@@ -1,11 +1,11 @@
 package com.example.signature_cuisine.util.impl;
 
-import com.example.signature_cuisine.util.PasswordHasher;
+import com.example.signature_cuisine.util.PasswordHash;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class Hash256 implements PasswordHasher {
+public class Hash256 implements PasswordHash {
     @Override
     public String hashPassword(String password) {
         return hash(password);
