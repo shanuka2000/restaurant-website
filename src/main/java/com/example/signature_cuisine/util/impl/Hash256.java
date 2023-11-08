@@ -1,10 +1,12 @@
 package com.example.signature_cuisine.util.impl;
 
 import com.example.signature_cuisine.util.PasswordHash;
+import org.springframework.stereotype.Component;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+@Component
 public class Hash256 implements PasswordHash {
     @Override
     public String hashPassword(String password) {
