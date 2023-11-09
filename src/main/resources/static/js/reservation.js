@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $("#availabilityStatus").hide();
     $("#simpleToast").hide();
     $(".customInput").on('input', function () {
         const inputValue = $(this).val();
@@ -16,11 +15,8 @@ $("#summary-form").submit(function (event) {
     const reservationDate = $("#iReservationDate").val();
     const numberOfGuests = $("#iNumPeople").val();
     const reservationType = $("#iReservationType").val();
-    const availabilityIndicator = $("#availabilityStatus")
     const toast = $("#simpleToast");
     const toastMessage = $("#toastMsg");
-
-    availabilityIndicator.hide();
 
     $.get("http://localhost:8080/reservation/availability?reservationDate="+ reservationDate +"&reservationType="+ reservationType +"&guestCount="+numberOfGuests)
         .done(function (data) {
