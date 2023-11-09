@@ -48,7 +48,7 @@ $("#summary-form").submit(function (event) {
                 }, 3000);
             } else {
                 toast.fadeIn("slow");
-                toastMessage.text("Request rejected by server")
+                toastMessage.text("Internal server error occurred. Please contact the administrator.")
                 toastMessage.css({
                     "color": "#bd1b1b"
                 });
@@ -63,5 +63,55 @@ $("#summary-form").submit(function (event) {
 $("#reservation-form").submit(function (event) {
     event.preventDefault();
 
+    const toast = $("#simpleToast");
+    const toastMessage = $("#toastMsg");
 
+    $.ajax({
+        url: "http://localhost:8080/api/reservation",
+        method: "POST",
+        data: JSON.stringify({
+            fullName: $("#iFullName").val(),
+            contactNumber: $("#iContact").val(),
+            email: $("#iEmail").val(),
+            numberOfGuest: $("#iNumPeople").val(),
+            reservationDate: $("#iReservationDate").val(),
+            reservationType: $("#iReservationType").val(),
+            specialRequests: $("#textarea").val(),
+        }),
+        contentType: "application/json",
+    })
+        .done(function () {
+            toast.fadeIn("slow");
+            toastMessage.text("Reservation Successful. ")
+            toastMessage.css({
+                "color": "#15c215"
+            });
+
+            setTimeout(function () {
+                toast.fadeOut();
+            }, 3000);
+        })
+        .fail(function (error) {
+            if (error.status === 422) {
+                toast.fadeIn("slow");
+                toastMessage.text("Selected date is not available!")
+                toastMessage.css({
+                    "color": "#bd1b1b"
+                });
+
+                setTimeout(function () {
+                    toast.fadeOut();
+                }, 3000);
+            } else {
+                toast.fadeIn("slow");
+                toastMessage.text("Internal server error occurred. Please contact the administrator.")
+                toastMessage.css({
+                    "color": "#bd1b1b"
+                });
+
+                setTimeout(function () {
+                    toast.fadeOut();
+                }, 3000);
+            }
+        })
 })

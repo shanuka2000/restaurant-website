@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Reservation {
     private String fullName;
-    private int contactNumber;
+    private String contactNumber;
     private String email;
-    private int numberOfGuest;
+    private String numberOfGuest;
     private String reservationDate;
     private String reservationType;
     private String specialRequests;

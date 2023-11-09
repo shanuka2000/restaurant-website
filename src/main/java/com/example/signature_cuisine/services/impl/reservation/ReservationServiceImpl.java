@@ -35,13 +35,13 @@ public class ReservationServiceImpl implements ReservationService {
 
             reservationEntity.setFullName(reservation.getFullName());
             reservationEntity.setEmail(reservation.getEmail());
-            reservationEntity.setContactNumber(reservation.getContactNumber());
-            reservationEntity.setNumberOfGuest(reservation.getNumberOfGuest());
+            reservationEntity.setContactNumber(Integer.parseInt(reservation.getContactNumber()));
+            reservationEntity.setNumberOfGuest(Integer.parseInt(reservation.getNumberOfGuest()));
             reservationEntity.setReservationDate(processedDate);
             reservationEntity.setReservationType(reservation.getReservationType());
             reservationEntity.setSpecialRequests(reservation.getSpecialRequests());
 
-            if (isReservable(reservation.getReservationDate(), reservation.getReservationType(), reservation.getNumberOfGuest())) {
+            if (isReservable(reservation.getReservationDate(), reservation.getReservationType(), Integer.parseInt(reservation.getNumberOfGuest()))) {
                 return reservationRepository.save(reservationEntity) != null;
             } else {
                 return false;
