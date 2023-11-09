@@ -3,7 +3,7 @@ package com.example.signature_cuisine.services.impl.authentication;
 import com.example.signature_cuisine.entity.AdminEntity;
 import com.example.signature_cuisine.repository.AdminRepository;
 import com.example.signature_cuisine.services.AuthenticateService;
-import com.example.signature_cuisine.util.PasswordHash;
+import com.example.signature_cuisine.services.PasswordHash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
