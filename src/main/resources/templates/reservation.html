@@ -7,6 +7,7 @@
     <link href="../static/css/nav.css" rel="stylesheet" th:href="@{/css/nav.css}" />
     <link href="../static/css/reservation.css" rel="stylesheet" th:href="@{/css/reservation.css}" />
     <link href="../static/css/footer.css" rel="stylesheet" th:href="@{/css/footer.css}" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="nav-header">
@@ -31,36 +32,36 @@
             <h1>Let's get your spot secured</h1>
         </section>
         <section class="section-form">
-            <form>
+            <form id="reservation-form">
                 <div class="form-input-block">
                     <label>
                         Full Name *
-                        <input type="text" name="fullName" required class="customInput"/>
+                        <input type="text" name="fullName" id="iFullName" required class="customInput" data-output-id="fullName"/>
                     </label>
                 </div>
                 <div class="form-input-block">
                     <label>Contact Number *
-                        <input type="tel" name="mobile" required pattern="^0[1-9][0-9]{8}$" class="customInput"/>
+                        <input type="tel" name="mobile" id="iContact" required pattern="^0[1-9][0-9]{8}$" class="customInput" data-output-id="contact"/>
                     </label>
                 </div>
                 <div class="form-input-block">
                     <label>Email Address *
-                        <input type="email" name="email" required class="customInput" />
+                        <input type="email" name="email" id="iEmail" required class="customInput" data-output-id="email"/>
                     </label>
                 </div>
                 <div class="form-input-block">
                     <label>Number of People *
-                        <input type="number" name="numGuest" max="10" min="1" required class="customInput"/>
+                        <input type="number" name="numGuest" id="iNumPeople" max="10" min="1" required class="customInput" data-output-id="numGuest"/>
                     </label>
                 </div>
-                <div class="form-input-block">
+                <div class="form-input-block" >
                     <label>Reservation date *
-                        <input type="date" name="date" required class="customInput"/>
+                        <input type="date" name="date" id="iReservationDate" required class="customInput" data-output-id="reservationDate"/>
                     </label>
                 </div>
                 <div class="form-input-block">
                     <label>Reservation type *
-                        <select class="customInput">
+                        <select class="customInput" id="iReservationType" data-output-id="reservationType">
                             <option selected value="n/a">Select type</option>
                             <option value="Lunch">Lunch (From 11.00 AM to 3.00 PM)</option>
                             <option value="Dinner">Dinner (From 5.30 PM to 11.30 PM)</option>
@@ -69,28 +70,28 @@
                 </div>
                 <div class="form-input-block">
                     <label>Special Requests
-                        <textarea rows="10" cols="50" class="customInput" id="textarea"></textarea>
+                        <textarea rows="10" cols="50" class="customInput" id="textarea" data-output-id="specialReq"></textarea>
                     </label>
                 </div>
                 <div class="form-input-block">
-                    <input type="submit" name="submit" value="Book Table"/>
+                    <button class="customButton" type="submit">Book Table</button>
                 </div>
             </form>
             <div class="summary">
                 <h4>Booking Summary</h4>
-                <div class="summary-text">
-                    <p>Full Name: <span>Shanuka Peiris</span></p>
-                    <p>Contact Number: <span>0710563822</span></p>
-                    <p>Email Address: <span>shanukapeiris@gmail.com</span></p>
-                    <p>Number of Guest: <span>10</span></p>
-                    <p>Reservation Date: <span>11/07/2023</span></p>
-                    <p>Reservation type: <span>Lunch</span></p>
-                    <p>Special Requests: <span>n/a</span></p>
+                <form class="summary-text">
+                    <p>Full Name: <span class="output" id="fullName">n/a</span></p>
+                    <p>Contact Number: <span id="contact">n/a</span></p>
+                    <p>Email Address: <span id="email">n/a</span></p>
+                    <p>Number of Guest: <span id="numGuest">n/a</span></p>
+                    <p>Reservation Date: <span id="reservationDate">n/a</span></p>
+                    <p>Reservation type: <span id="reservationType">n/a</span></p>
+                    <p>Special Requests: <span id="specialReq">n/a</span></p>
                     <div class="availability-wrapper">
-                        <button>Check Availability</button>
+                        <button type="submit" id="check-avb">Check Availability</button>
                         <p class="availability-hide">Available</p>
                     </div>
-                </div>
+                </form>
             </div>
         </section>
     </main>
@@ -106,5 +107,6 @@
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script th:src="@{/js/reservation.js}" type="text/javascript"></script>
 </body>
 </html>
