@@ -1,4 +1,4 @@
-package com.example.signature_cuisine.dto;
+package com.example.signature_cuisine.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
