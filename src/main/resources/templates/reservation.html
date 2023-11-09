@@ -62,8 +62,7 @@
                 <div class="form-input-block">
                     <label>Reservation type *
                         <select class="customInput" id="iReservationType" data-output-id="reservationType">
-                            <option selected value="n/a">Select type</option>
-                            <option value="Lunch">Lunch (From 11.00 AM to 3.00 PM)</option>
+                            <option value="Lunch" selected>Lunch (From 11.00 AM to 3.00 PM)</option>
                             <option value="Dinner">Dinner (From 5.30 PM to 11.30 PM)</option>
                        </select>
                     </label>
@@ -79,7 +78,7 @@
             </form>
             <div class="summary">
                 <h4>Booking Summary</h4>
-                <form class="summary-text">
+                <form class="summary-text" id="summary-form">
                     <p>Full Name: <span class="output" id="fullName">n/a</span></p>
                     <p>Contact Number: <span id="contact">n/a</span></p>
                     <p>Email Address: <span id="email">n/a</span></p>
@@ -89,7 +88,7 @@
                     <p>Special Requests: <span id="specialReq">n/a</span></p>
                     <div class="availability-wrapper">
                         <button type="submit" id="check-avb">Check Availability</button>
-                        <p class="availability-hide">Available</p>
+                        <p id="availabilityStatus"></p>
                     </div>
                 </form>
             </div>
