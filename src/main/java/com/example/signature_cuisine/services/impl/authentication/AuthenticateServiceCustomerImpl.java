@@ -4,6 +4,7 @@ import com.example.signature_cuisine.entity.CustomerEntity;
 import com.example.signature_cuisine.repository.CustomerRepository;
 import com.example.signature_cuisine.services.AuthenticateService;
 import com.example.signature_cuisine.services.PasswordHash;
+import com.example.signature_cuisine.services.impl.security.Hash256;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +14,10 @@ public class AuthenticateServiceCustomerImpl implements AuthenticateService {
     @Autowired
     private CustomerRepository customerRepository;
 
-    private PasswordHash passwordHash;
+    private Hash256 passwordHash;
 
     @Autowired
-    public AuthenticateServiceCustomerImpl(PasswordHash passwordHash) {
+    public AuthenticateServiceCustomerImpl(Hash256 passwordHash) {
         this.passwordHash = passwordHash;
     }
 
@@ -27,7 +28,7 @@ public class AuthenticateServiceCustomerImpl implements AuthenticateService {
             CustomerEntity customerEntity = customerRepository.findByEmail(email);
             return passwordHash.isPasswordValid(password, customerEntity.getPassword());
         } catch (Exception e) {
-            throw new Exception("Something went wrong!");
+            throw new Exception("Internal server error occurred. Please contact the administrator.");
         }
 
     }

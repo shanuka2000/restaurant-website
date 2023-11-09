@@ -26,9 +26,9 @@ public class AuthenticateController {
     public ResponseEntity<?> authenticateCustomer(@RequestParam("email") String email, @RequestParam("password") String password) {
 
         try {
-            boolean authenticated = authenticateServiceCustomer.authenticate(email, password);
+            boolean isAuthenticated = authenticateServiceCustomer.authenticate(email, password);
 
-            return getStringResponseEntity(authenticated);
+            return getStringResponseEntity(isAuthenticated);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(e.getMessage()));
         }
@@ -38,9 +38,9 @@ public class AuthenticateController {
     public ResponseEntity<?> authenticateStaff(@RequestParam("email") String email, @RequestParam("password") String password) {
 
         try {
-            boolean authenticated = authenticateStaff.authenticate(email, password);
+            boolean isAuthenticated = authenticateStaff.authenticate(email, password);
 
-            return getStringResponseEntity(authenticated);
+            return getStringResponseEntity(isAuthenticated);
 
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(e.getMessage()));
@@ -51,9 +51,9 @@ public class AuthenticateController {
     public ResponseEntity<?> authenticateAdmin(@RequestParam("email") String email, @RequestParam("password") String password) {
 
         try {
-            boolean authenticated = authenticateServiceAdmin.authenticate(email, password);
+            boolean isAuthenticated = authenticateServiceAdmin.authenticate(email, password);
 
-            return getStringResponseEntity(authenticated);
+            return getStringResponseEntity(isAuthenticated);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(e.getMessage()));
         }
@@ -61,9 +61,9 @@ public class AuthenticateController {
 
     private static ResponseEntity<String> getStringResponseEntity(boolean authenticated) {
         if (authenticated) {
-            return ResponseEntity.status(HttpStatus.OK).body("Login Successful");
+            return ResponseEntity.status(HttpStatus.OK).body("Login Successful.");
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password.");
         }
     }
 }
