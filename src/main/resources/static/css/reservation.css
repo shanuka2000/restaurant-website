@@ -91,25 +91,3 @@
 .summary-text button {
     margin: 10px 0;
 }
-
-.availability-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.availability-hide {
-    display: none;
-}
-
-.availability-success {
-    display: block;
-    color: #15c215;
-    font-weight: bold;
-}
-
-.availability-failed {
-    display: block;
-    color: #bd1b1b;
-    font-weight: bold;
-}

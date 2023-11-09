@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $("#availabilityStatus").hide();
+    $("#simpleToast").hide();
     $(".customInput").on('input', function () {
         const inputValue = $(this).val();
         const outputId = $(this).data('output-id');
@@ -15,26 +16,46 @@ $("#summary-form").submit(function (event) {
     const reservationDate = $("#iReservationDate").val();
     const numberOfGuests = $("#iNumPeople").val();
     const reservationType = $("#iReservationType").val();
-    const availabilityIndicator = $("#availabilityStatus");
+    const availabilityIndicator = $("#availabilityStatus")
+    const toast = $("#simpleToast");
+    const toastMessage = $("#toastMsg");
 
     availabilityIndicator.hide();
 
     $.get("http://localhost:8080/api/reservation/availability?reservationDate="+ reservationDate +"&reservationType="+ reservationType +"&guestCount="+numberOfGuests)
         .done(function (data) {
-            availabilityIndicator.show();
-            availabilityIndicator.removeClass().addClass("availability-success");
-            availabilityIndicator.text("Available")
+            toast.fadeIn("slow");
+            toastMessage.text("Check Complete: Reservation Available")
+            toastMessage.css({
+                "color": "#15c215"
+            });
+
+            setTimeout(function () {
+                toast.fadeOut();
+            }, 3000);
         })
         .fail(function (error) {
 
             if (error.status === 409) {
-                availabilityIndicator.show();
-                availabilityIndicator.removeClass().addClass("availability-failed");
-                availabilityIndicator.text("Not Available")
+                toast.fadeIn("slow");
+                toastMessage.text("Check Complete: Reservation Not Available")
+                toastMessage.css({
+                    "color": "#bd1b1b"
+                });
+
+                setTimeout(function () {
+                    toast.fadeOut();
+                }, 3000);
             } else {
-                availabilityIndicator.show();
-                availabilityIndicator.removeClass().addClass("availability-failed");
-                availabilityIndicator.text("Not Enough Data")
+                toast.fadeIn("slow");
+                toastMessage.text("Request rejected by server")
+                toastMessage.css({
+                    "color": "#bd1b1b"
+                });
+
+                setTimeout(function () {
+                    toast.fadeOut();
+                }, 3000);
             }
         })
 })
@@ -42,5 +63,5 @@ $("#summary-form").submit(function (event) {
 $("#reservation-form").submit(function (event) {
     event.preventDefault();
 
-    // TODO: Implement code to book a reservation
+
 })
