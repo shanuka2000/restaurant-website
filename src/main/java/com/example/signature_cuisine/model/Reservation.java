@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,7 +12,7 @@ public class Reservation {
     private int contactNumber;
     private String email;
     private int numberOfGuest;
-    private Date reservationDate;
+    private String reservationDate;
     private String reservationType;
     private String specialRequests;
 }
