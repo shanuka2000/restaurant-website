@@ -15,6 +15,8 @@ public class CheckAvailabilityByGuestCount {
 
     public boolean isAvailable(Date reservationDate, String reservationType, int reservationGuestCount) {
         Integer guestCount = reservationRepository.getTotalGuestsByDateAndType(reservationDate, reservationType);
-        return guestCount == null || guestCount < MAX_GUESTS || guestCount + reservationGuestCount < MAX_GUESTS;
+
+        return (guestCount == null && reservationGuestCount <= MAX_GUESTS) ||
+                (guestCount != null && guestCount + reservationGuestCount <= MAX_GUESTS);
     }
 }
