@@ -1,4 +1,4 @@
-package com.example.signature_cuisine.util;
+package com.example.signature_cuisine.services;
 
 public interface PasswordHash {
     String hashPassword(String password);

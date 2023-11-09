@@ -1,6 +1,6 @@
-package com.example.signature_cuisine.util.impl;
+package com.example.signature_cuisine.services.impl.security;
 
-import com.example.signature_cuisine.util.PasswordHash;
+import com.example.signature_cuisine.services.PasswordHash;
 import org.springframework.stereotype.Component;
 
 import java.security.MessageDigest;
