@@ -25,8 +25,8 @@ public class AuthenticationStaffImpl implements AuthenticateService {
     public boolean authenticate(String email, String password) throws Exception {
 
         try {
-            StaffEntity customerEntity = staffRepository.findByEmail(email);
-            return passwordHash.isPasswordValid(password, customerEntity.getPassword());
+            StaffEntity staffEntity = staffRepository.findByEmail(email);
+            return passwordHash.isPasswordValid(password, staffEntity.getPassword());
         } catch (Exception e) {
             throw new Exception("Something went wrong!");
         }
