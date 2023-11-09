@@ -57,7 +57,7 @@
     padding: 10px;
 }
 
-.form-input-block:last-child input, .summary-text button {
+.customButton, .summary-text button {
     background-color: black;
     width: 10rem;
     height: 2.5rem;
