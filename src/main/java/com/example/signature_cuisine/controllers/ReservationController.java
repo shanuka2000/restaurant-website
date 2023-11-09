@@ -3,7 +3,7 @@ package com.example.signature_cuisine.controllers;
 import com.example.signature_cuisine.entity.ReservationEntity;
 import com.example.signature_cuisine.exception.ErrorResponse;
 import com.example.signature_cuisine.model.Reservation;
-import com.example.signature_cuisine.services.impl.ReservationServiceImpl;
+import com.example.signature_cuisine.services.impl.reservation.ReservationServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +27,21 @@ public class ReservationController {
                 return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Empty list.");
             } else {
                 return ResponseEntity.status(HttpStatus.OK).body(reservations);
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(e.getMessage()));
+        }
+    }
+
+    @GetMapping("/availability")
+    public ResponseEntity<?> checkAvailability(@RequestParam String reservationDate, @RequestParam String reservationType, @RequestParam int guestCount) {
+        try {
+            boolean isAvailable = reservationService.isReservable(reservationDate, reservationType, guestCount);
+
+            if (isAvailable) {
+                return ResponseEntity.status(HttpStatus.OK).body("Reservable.");
+            } else {
+                return ResponseEntity.status(HttpStatus.CONFLICT).body("Reservation not available.");
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(e.getMessage()));
