@@ -14,7 +14,11 @@ public class DateProcess implements DateProcessor {
     @Override
     public Date processDate(String date) throws Exception {
         try {
-            return dateFormat.parse(date);
+            Date parsedDate = dateFormat.parse(date);
+
+            SimpleDateFormat desiredFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+            return desiredFormat.parse(desiredFormat.format(parsedDate));
         } catch (Exception e) {
             throw new Exception("Date processing failed");
         }
