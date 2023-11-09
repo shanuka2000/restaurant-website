@@ -22,7 +22,7 @@ $("#summary-form").submit(function (event) {
 
     availabilityIndicator.hide();
 
-    $.get("http://localhost:8080/api/reservation/availability?reservationDate="+ reservationDate +"&reservationType="+ reservationType +"&guestCount="+numberOfGuests)
+    $.get("http://localhost:8080/reservation/availability?reservationDate="+ reservationDate +"&reservationType="+ reservationType +"&guestCount="+numberOfGuests)
         .done(function (data) {
             toast.fadeIn("slow");
             toastMessage.text("Check Complete: Reservation Available")
@@ -67,7 +67,7 @@ $("#reservation-form").submit(function (event) {
     const toastMessage = $("#toastMsg");
 
     $.ajax({
-        url: "http://localhost:8080/api/reservation",
+        url: "http://localhost:8080/reservation",
         method: "POST",
         data: JSON.stringify({
             fullName: $("#iFullName").val(),
