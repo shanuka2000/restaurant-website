@@ -36,15 +36,16 @@
           <button>
               <ion-icon name="notifications-outline"></ion-icon>
           </button>
-          <button>
+          <button id="profileBtn">
               <ion-icon name="person-circle-outline"></ion-icon>
           </button>
-          <div class="user-details-wrapper hidden">
+          <div class="user-details-wrapper">
               <div class="avatar">A</div>
-              <h3>User #</h3>
+              <h3 id="username">n/a</h3>
               <div class="use-details">
-                  <p>Clearance Level: <span>Staff</span></p>
+                  <p>Clearance Level: <span id="clearanceLevel">n/a</span></p>
               </div>
+              <button id="signOut">Sign out</button>
           </div>
       </nav>
       <main>
@@ -57,24 +58,29 @@
           <section class="quick-numbers">
               <div class="quick-numbers-card">
                   <h2>Total users</h2>
-                  <h2>12</h2>
+                  <h2 id="totUsers">00</h2>
               </div>
               <div class="quick-numbers-card">
                   <h2>Bookings today</h2>
-                  <h2>12</h2>
+                  <h2 id="reservationCount">00</h2>
               </div>
               <div class="quick-numbers-card">
                   <h2>Tickets</h2>
-                  <h2>12</h2>
+                  <h2 id="ticketCount">00</h2>
               </div>
           </section>
           <section class="query-wrapper">
               <h2>Customer Query</h2>
-              <div class="query-item">
+              <div class="query-items">
 
               </div>
           </section>
+          <section class="bookings-wrapper">
+              <h2>Today Reservations</h2>
+              <div class="bookings-items">
 
+              </div>
+          </section>
       </main>
   </div>
   <div id="simpleToast">
