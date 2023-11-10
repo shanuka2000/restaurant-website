@@ -24,7 +24,7 @@ public class CustomerQueryController {
             List<CustomerQueryEntity> customerQueries = customerQueryService.getAll();
 
             if (customerQueries.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Empty List");
+                return ResponseEntity.status(HttpStatus.OK).body("Empty List");
             } else {
                 return ResponseEntity.status(HttpStatus.OK).body(customerQueries);
             }
