@@ -6,7 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor@NoArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "customerquery")
 public class CustomerQueryEntity {
@@ -16,4 +17,6 @@ public class CustomerQueryEntity {
     private String fullName;
     private String email;
     private String message;
+
+
 }
