@@ -18,9 +18,9 @@ $("#customer-query").submit(function (event) {
         }),
         contentType: "application/json",
     })
-        .done(function () {
+        .done(function (data) {
             toast.fadeIn("slow");
-            toastMessage.text("Query Submitted. ")
+            toastMessage.text(data)
             toastMessage.css({
                 "color": "#15c215"
             });
@@ -30,27 +30,15 @@ $("#customer-query").submit(function (event) {
             }, 3000);
         })
         .fail(function (error) {
-            if (error.status === 422) {
-                toast.fadeIn("slow");
-                toastMessage.text("Query Submit Failed")
-                toastMessage.css({
-                    "color": "#bd1b1b"
-                });
+            toast.fadeIn("slow");
+            toastMessage.text(error)
+            toastMessage.css({
+                "color": "#bd1b1b"
+            });
 
-                setTimeout(function () {
-                    toast.fadeOut();
-                }, 3000);
-            } else {
-                toast.fadeIn("slow");
-                toastMessage.text("Internal server error occurred. Please contact the administrator.")
-                toastMessage.css({
-                    "color": "#bd1b1b"
-                });
-
-                setTimeout(function () {
-                    toast.fadeOut();
-                }, 3000);
-            }
+            setTimeout(function () {
+                toast.fadeOut();
+            }, 3000);
         })
 
     $("#customer-query :input").val("")

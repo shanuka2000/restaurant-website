@@ -21,7 +21,7 @@ $("#summary-form").submit(function (event) {
     $.get("http://localhost:8080/reservations/availability?reservationDate="+ reservationDate +"&reservationType="+ reservationType +"&guestCount="+numberOfGuests)
         .done(function (data) {
             toast.fadeIn("slow");
-            toastMessage.text("Check Complete: Reservation Available")
+            toastMessage.text(data)
             toastMessage.css({
                 "color": "#15c215"
             });
@@ -31,28 +31,15 @@ $("#summary-form").submit(function (event) {
             }, 3000);
         })
         .fail(function (error) {
+            toast.fadeIn("slow");
+            toastMessage.text(error)
+            toastMessage.css({
+                "color": "#bd1b1b"
+            });
 
-            if (error.status === 409) {
-                toast.fadeIn("slow");
-                toastMessage.text("Check Complete: Reservation Not Available")
-                toastMessage.css({
-                    "color": "#bd1b1b"
-                });
-
-                setTimeout(function () {
-                    toast.fadeOut();
-                }, 3000);
-            } else {
-                toast.fadeIn("slow");
-                toastMessage.text("Internal server error occurred. Please contact the administrator.")
-                toastMessage.css({
-                    "color": "#bd1b1b"
-                });
-
-                setTimeout(function () {
-                    toast.fadeOut();
-                }, 3000);
-            }
+            setTimeout(function () {
+                toast.fadeOut();
+            }, 3000);
         })
 })
 
@@ -76,9 +63,9 @@ $("#reservation-form").submit(function (event) {
         }),
         contentType: "application/json",
     })
-        .done(function () {
+        .done(function (data) {
             toast.fadeIn("slow");
-            toastMessage.text("Reservation Successful. ")
+            toastMessage.text(data)
             toastMessage.css({
                 "color": "#15c215"
             });
@@ -88,26 +75,14 @@ $("#reservation-form").submit(function (event) {
             }, 3000);
         })
         .fail(function (error) {
-            if (error.status === 422) {
-                toast.fadeIn("slow");
-                toastMessage.text("Selected date is not available!")
-                toastMessage.css({
-                    "color": "#bd1b1b"
-                });
+            toast.fadeIn("slow");
+            toastMessage.text(error)
+            toastMessage.css({
+                "color": "#bd1b1b"
+            });
 
-                setTimeout(function () {
-                    toast.fadeOut();
-                }, 3000);
-            } else {
-                toast.fadeIn("slow");
-                toastMessage.text("Internal server error occurred. Please contact the administrator.")
-                toastMessage.css({
-                    "color": "#bd1b1b"
-                });
-
-                setTimeout(function () {
-                    toast.fadeOut();
-                }, 3000);
-            }
+            setTimeout(function () {
+                toast.fadeOut();
+            }, 3000);
         })
 })
