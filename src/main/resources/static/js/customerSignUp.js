@@ -18,9 +18,9 @@ $("#customerSignUp").submit(function (event) {
         }),
         contentType: "application/json",
     })
-        .done(function () {
+        .done(function (data) {
             toast.fadeIn("slow");
-            toastMessage.text("Sign in successful")
+            toastMessage.text(data)
             toastMessage.css({
                 "color": "#15c215"
             });
@@ -30,9 +30,9 @@ $("#customerSignUp").submit(function (event) {
                 window.location.href = "/sign-in";
             }, 3000);
         })
-        .fail(function () {
+        .fail(function (error) {
             toast.fadeIn("slow");
-            toastMessage.text("Something went wrong. Please try again")
+            toastMessage.text(error)
             toastMessage.css({
                 "color": "#bd1b1b"
             });
