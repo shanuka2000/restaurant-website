@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuthenticationStaffImpl implements AuthenticateService {
+public class AuthenticationServiceStaffImpl implements AuthenticateService {
 
     @Autowired
     private StaffRepository staffRepository;
@@ -16,7 +16,7 @@ public class AuthenticationStaffImpl implements AuthenticateService {
     private Hash256 passwordHash;
 
     @Autowired
-    public AuthenticationStaffImpl(Hash256 passwordHash) {
+    public AuthenticationServiceStaffImpl(Hash256 passwordHash) {
         this.passwordHash = passwordHash;
     }
 
