@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StaffRepository extends JpaRepository<StaffEntity, Long> {
     StaffEntity findByEmail(String email);
+    StaffEntity save(StaffEntity staff);
 }
