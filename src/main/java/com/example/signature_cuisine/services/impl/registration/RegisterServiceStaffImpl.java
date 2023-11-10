@@ -12,10 +12,8 @@ public class RegisterServiceStaffImpl implements RegisterService  {
     @Autowired
     private StaffRepository staffRepository;
     private final Hash256 passwordHash;
-    private final ValidateEmail validateEmail;
-    public RegisterServiceStaffImpl(Hash256 passwordHash, ValidateEmail validateEmail) {
+    public RegisterServiceStaffImpl(Hash256 passwordHash) {
         this.passwordHash = passwordHash;
-        this.validateEmail = validateEmail;
     }
     @Override
     public boolean register(String fullName, String email, String password) throws Exception {
