@@ -9,15 +9,21 @@ public class UiController {
     public String getHome() {return  "home";}
 
     @GetMapping("/menu")
-    public String getMenu() {return  "menu";}
+    public String getMenu() {return "menu";}
     @GetMapping("/facility")
-    public String getFacility() {return  "facility";}
+    public String getFacility() {return "facility";}
     @GetMapping("/gallery")
-    public String getGallery() {return  "gallery";}
+    public String getGallery() {return "gallery";}
     @GetMapping("/reservation")
-    public String getReservation() {return  "reservation";}
+    public String getReservation() {return "reservation";}
     @GetMapping("/sign-in")
-    public String getSignIn() {return  "signin";}
+    public String getSignIn() {return "signin";}
     @GetMapping("/sign-up")
-    public String getSignUp() {return  "signup";}
+    public String getSignUp() {return "signup";}
+    @GetMapping("/dashboard")
+    public String getDashboard() {return "staff"; }
+    @GetMapping("/admin-sign-in")
+    public String getAdminSignIn() {return "adminSignIn";}
+    @GetMapping("/admin-register")
+    public String getAdminRegister() {return "adminRegister";}
 }
