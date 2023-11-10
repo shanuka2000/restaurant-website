@@ -1,4 +1,9 @@
+main {
+    position: relative;
+    overflow-y: scroll;
+    height: 100%;
 
+}
 body {
     width: 100vw;
     height: 100vh;
@@ -171,7 +176,7 @@ nav form ion-icon {
 }
 
 .furtherImpl {
-    margin: auto;
+    margin: 1% auto;
     width: 90%;
     height: 50%;
     background-color: black;
@@ -198,4 +203,13 @@ nav form ion-icon {
     100%{
         transform: rotate(360deg);
     }
+}
+
+/* Toast css is overridden here */
+#simpleToast {
+    left: unset !important;
+    top: unset !important;
+    bottom: 10% !important;
+    right: 5% !important;
+    transform: none !important;
 }
