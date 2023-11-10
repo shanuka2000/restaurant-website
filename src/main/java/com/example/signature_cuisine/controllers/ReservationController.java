@@ -39,9 +39,9 @@ public class ReservationController {
             boolean isAvailable = reservationService.isReservable(reservationDate, reservationType, guestCount);
 
             if (isAvailable) {
-                return ResponseEntity.status(HttpStatus.OK).body("Reservable.");
+                return ResponseEntity.status(HttpStatus.OK).body("Reservation available for provided details.");
             } else {
-                return ResponseEntity.status(HttpStatus.CONFLICT).body("Reservation not available.");
+                return ResponseEntity.status(HttpStatus.CONFLICT).body("Reservation not available for provided details.");
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(e.getMessage()));
