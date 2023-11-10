@@ -33,6 +33,17 @@ public class CustomerQueryController {
         }
     }
 
+    @GetMapping("/count")
+    public ResponseEntity<?> getQueryCount() {
+        try {
+            int count = customerQueryService.getCount();
+
+            return ResponseEntity.status(HttpStatus.OK).body(count);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(e.getMessage()));
+        }
+    }
+
     @PostMapping()
     public ResponseEntity<?> saveQuery(@RequestBody CustomerQuery customerQuery) {
         try {
