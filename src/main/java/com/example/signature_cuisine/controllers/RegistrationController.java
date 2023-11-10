@@ -62,7 +62,7 @@ public class RegistrationController {
         if (isRegistered) {
             return ResponseEntity.status(HttpStatus.CREATED).body(userType + " registration successful");
         } else {
-            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(userType + " registration failed");
+            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body("Email is already in use. Please use a different email.");
         }
     }
 }
