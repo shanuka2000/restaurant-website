@@ -25,5 +25,5 @@ public class UiController {
     @GetMapping("/admin-sign-in")
     public String getAdminSignIn() {return "adminSignIn";}
     @GetMapping("/staff-register")
-    public String getAdminRegister() {return "staffRegister";}
+    public String getAdminRegister() {return "adminRegister";}
 }
