@@ -24,7 +24,7 @@ public class ReservationController {
             List<ReservationEntity> reservations = reservationService.getAll();
 
             if (reservations.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Empty list.");
+                return ResponseEntity.status(HttpStatus.OK).body("Empty List");
             } else {
                 return ResponseEntity.status(HttpStatus.OK).body(reservations);
             }
@@ -34,7 +34,7 @@ public class ReservationController {
     }
 
     @GetMapping("/availability")
-    public ResponseEntity<?> checkAvailability(@RequestParam String reservationDate, @RequestParam String reservationType, @RequestParam int guestCount) {
+    public ResponseEntity<?> checkAvailability(@RequestParam("reservationDate") String reservationDate, @RequestParam("reservationType") String reservationType, @RequestParam("guestCount") int guestCount) {
         try {
             boolean isAvailable = reservationService.isReservable(reservationDate, reservationType, guestCount);
 
