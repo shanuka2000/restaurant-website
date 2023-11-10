@@ -33,6 +33,17 @@ public class ReservationController {
         }
     }
 
+    @GetMapping("/count")
+    public ResponseEntity<?> getReservationCount(@RequestParam("date") String date) {
+        try {
+            int count = reservationService.getCount(date);
+
+            return ResponseEntity.status(HttpStatus.OK).body(count);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(e.getMessage()));
+        }
+    }
+
     @GetMapping("/availability")
     public ResponseEntity<?> checkAvailability(@RequestParam("reservationDate") String reservationDate, @RequestParam("reservationType") String reservationType, @RequestParam("guestCount") int guestCount) {
         try {
