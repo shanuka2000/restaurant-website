@@ -4,7 +4,7 @@ import com.example.signature_cuisine.controllers.AuthenticateController;
 import com.example.signature_cuisine.exception.ErrorResponse;
 import com.example.signature_cuisine.services.impl.authentication.AuthenticateServiceAdminImpl;
 import com.example.signature_cuisine.services.impl.authentication.AuthenticateServiceCustomerImpl;
-import com.example.signature_cuisine.services.impl.authentication.AuthenticationStaffImpl;
+import com.example.signature_cuisine.services.impl.authentication.AuthenticationServiceStaffImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -23,7 +23,7 @@ public class AuthenticateControllerTest {
     private AuthenticateServiceCustomerImpl authenticateServiceCustomer;
 
     @Mock
-    private AuthenticationStaffImpl authenticateStaff;
+    private AuthenticationServiceStaffImpl authenticateStaff;
 
     @Mock
     private AuthenticateServiceAdminImpl authenticateServiceAdmin;
