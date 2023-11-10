@@ -10,29 +10,26 @@ import org.springframework.stereotype.Service;
 @Service
 public class RegisterServiceCustomerImpl implements RegisterService {
     private final Hash256 passwordHash;
-    private final ValidateEmail validateEmail;
 
     @Autowired
     private CustomerRepository customerRepository;
 
-    public RegisterServiceCustomerImpl (Hash256 passwordHash, ValidateEmail validateEmail) {
+    public RegisterServiceCustomerImpl (Hash256 passwordHash) {
         this.passwordHash = passwordHash;
-        this.validateEmail = validateEmail;
     }
     @Override
     public boolean register(String fullName, String email, String password) throws Exception {
         try {
+            if (customerRepository.findByEmail(email) != null) {
+                return false;
+            }
             CustomerEntity customerEntity = new CustomerEntity();
 
             customerEntity.setFullName(fullName);
             customerEntity.setEmail(email);
             customerEntity.setPassword(passwordHash.hashPassword(password));
 
-            if (validateEmail.isValid(email)) {
-                return customerRepository.save(customerEntity) != null;
-            } else {
-                return false;
-            }
+            return customerRepository.save(customerEntity) != null;
         } catch (Exception e) {
             throw new Exception("Internal server error occurred. Please contact the administrator.");
         }

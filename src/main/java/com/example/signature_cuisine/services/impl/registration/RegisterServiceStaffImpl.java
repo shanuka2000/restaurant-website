@@ -20,17 +20,16 @@ public class RegisterServiceStaffImpl implements RegisterService  {
     @Override
     public boolean register(String fullName, String email, String password) throws Exception {
         try {
+            if (staffRepository.findByEmail(email) != null) {
+                return false;
+            }
             StaffEntity staffEntity = new StaffEntity();
 
             staffEntity.setFullName(fullName);
             staffEntity.setEmail(email);
             staffEntity.setPassword(passwordHash.hashPassword(password));
 
-            if (validateEmail.isValid(email)) {
-                return staffRepository.save(staffEntity) != null;
-            } else {
-                return false;
-            }
+            return staffRepository.save(staffEntity) != null;
         } catch (Exception e) {
             throw new Exception("Internal server error occurred. Please contact the administrator.");
         }
