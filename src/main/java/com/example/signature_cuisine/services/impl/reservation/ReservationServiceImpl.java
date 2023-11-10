@@ -74,4 +74,13 @@ public class ReservationServiceImpl implements ReservationService {
             throw new Exception("Internal server error occurred. Please contact the administrator.");
         }
     }
+
+    @Override
+    public int getCount(String date) throws Exception {
+        try {
+            return reservationRepository.countByReservationDate(dateProcess.processDate(date));
+        } catch (Exception e) {
+            throw new Exception("Internal server error occurred. Please contact the administrator.");
+        }
+    }
 }
