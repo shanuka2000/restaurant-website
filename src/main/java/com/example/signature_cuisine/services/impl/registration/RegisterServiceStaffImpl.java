@@ -1,6 +1,5 @@
 package com.example.signature_cuisine.services.impl.registration;
 
-import com.example.signature_cuisine.entity.CustomerEntity;
 import com.example.signature_cuisine.entity.StaffEntity;
 import com.example.signature_cuisine.repository.StaffRepository;
 import com.example.signature_cuisine.services.RegisterService;
@@ -12,8 +11,8 @@ import org.springframework.stereotype.Service;
 public class RegisterServiceStaffImpl implements RegisterService  {
     @Autowired
     private StaffRepository staffRepository;
-    private Hash256 passwordHash;
-    private ValidateEmail validateEmail;
+    private final Hash256 passwordHash;
+    private final ValidateEmail validateEmail;
     public RegisterServiceStaffImpl(Hash256 passwordHash, ValidateEmail validateEmail) {
         this.passwordHash = passwordHash;
         this.validateEmail = validateEmail;

@@ -14,6 +14,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.util.Objects;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
@@ -38,7 +40,7 @@ public class AuthenticateControllerTest {
         ResponseEntity<?> response = authenticateController.authenticateCustomer("test@example.com", "password123");
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("Login Successful.", response.getBody());
+        assertEquals("Customer login successful.", response.getBody());
     }
 
     @Test
@@ -58,7 +60,7 @@ public class AuthenticateControllerTest {
         ResponseEntity<?> response = authenticateController.authenticateCustomer("test@example.com", "password123");
 
         assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
-        assertEquals(ErrorResponse.class, response.getBody().getClass());
+        assertEquals(ErrorResponse.class, Objects.requireNonNull(response.getBody()).getClass());
     }
 
     @Test
@@ -68,7 +70,7 @@ public class AuthenticateControllerTest {
         ResponseEntity<?> response = authenticateController.authenticateStaff("test@example.com", "password123");
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("Login Successful.", response.getBody());
+        assertEquals("Staff login successful.", response.getBody());
     }
 
     @Test
@@ -88,7 +90,7 @@ public class AuthenticateControllerTest {
         ResponseEntity<?> response = authenticateController.authenticateAdmin("admin@example.com", "adminPassword");
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("Login Successful.", response.getBody());
+        assertEquals("Admin login successful.", response.getBody());
     }
 
     @Test
@@ -108,7 +110,7 @@ public class AuthenticateControllerTest {
         ResponseEntity<?> response = authenticateController.authenticateCustomer("test@example.com", "password123");
 
         assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
-        assertEquals(ErrorResponse.class, response.getBody().getClass());
+        assertEquals(ErrorResponse.class, Objects.requireNonNull(response.getBody()).getClass());
     }
 
     @Test
@@ -134,7 +136,7 @@ public class AuthenticateControllerTest {
         ResponseEntity<?> response = authenticateController.authenticateCustomer("test@example.com", "password123");
 
         assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
-        assertEquals(ErrorResponse.class, response.getBody().getClass());
+        assertEquals(ErrorResponse.class, Objects.requireNonNull(response.getBody()).getClass());
     }
 
     @Test
@@ -144,7 +146,7 @@ public class AuthenticateControllerTest {
         ResponseEntity<?> response = authenticateController.authenticateStaff("staff@example.com", "staffPassword");
 
         assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
-        assertEquals(ErrorResponse.class, response.getBody().getClass());
+        assertEquals(ErrorResponse.class, Objects.requireNonNull(response.getBody()).getClass());
     }
 
     @Test
@@ -154,6 +156,6 @@ public class AuthenticateControllerTest {
         ResponseEntity<?> response = authenticateController.authenticateAdmin("admin@example.com", "adminPassword");
 
         assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
-        assertEquals(ErrorResponse.class, response.getBody().getClass());
+        assertEquals(ErrorResponse.class, Objects.requireNonNull(response.getBody()).getClass());
     }
 }

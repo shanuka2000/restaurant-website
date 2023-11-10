@@ -25,7 +25,7 @@ $("#adminSignIn").submit(function (event) {
         method: "POST",
         contentType: "application/json",
     })
-        .done(function (data) { // 1 = admin, 2 = staff
+        .done(function () { // 1 = admin, 2 = staff
             toast.fadeIn("slow");
             toastMessage.text("Sign in successful")
             toastMessage.css({
@@ -39,7 +39,7 @@ $("#adminSignIn").submit(function (event) {
                 window.location.href = "/dashboard";
             }, 3000);
         })
-        .fail(function (error) {
+        .fail(function () {
             toast.fadeIn("slow");
             toastMessage.text("Email or Password Incorrect!")
             toastMessage.css({

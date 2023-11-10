@@ -12,9 +12,7 @@ public class AuthenticationServiceStaffImpl implements AuthenticateService {
 
     @Autowired
     private StaffRepository staffRepository;
-
-    private Hash256 passwordHash;
-
+    private final Hash256 passwordHash;
     @Autowired
     public AuthenticationServiceStaffImpl(Hash256 passwordHash) {
         this.passwordHash = passwordHash;

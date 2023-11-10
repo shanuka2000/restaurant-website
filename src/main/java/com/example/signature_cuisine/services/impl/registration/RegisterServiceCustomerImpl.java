@@ -9,10 +9,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RegisterServiceCustomerImpl implements RegisterService {
-    private Hash256 passwordHash;
-    private ValidateEmail validateEmail;
+    private final Hash256 passwordHash;
+    private final ValidateEmail validateEmail;
+
     @Autowired
     private CustomerRepository customerRepository;
+
     public RegisterServiceCustomerImpl (Hash256 passwordHash, ValidateEmail validateEmail) {
         this.passwordHash = passwordHash;
         this.validateEmail = validateEmail;

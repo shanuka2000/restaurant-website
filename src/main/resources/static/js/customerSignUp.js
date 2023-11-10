@@ -18,7 +18,7 @@ $("#customerSignUp").submit(function (event) {
         }),
         contentType: "application/json",
     })
-        .done(function (data) {
+        .done(function () {
             toast.fadeIn("slow");
             toastMessage.text("Sign in successful")
             toastMessage.css({
@@ -30,7 +30,7 @@ $("#customerSignUp").submit(function (event) {
                 window.location.href = "/sign-in";
             }, 3000);
         })
-        .fail(function (error) {
+        .fail(function () {
             toast.fadeIn("slow");
             toastMessage.text("Something went wrong. Please try again")
             toastMessage.css({
