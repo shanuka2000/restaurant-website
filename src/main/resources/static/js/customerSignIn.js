@@ -8,13 +8,12 @@ $("#customerSignIn").submit(function (event) {
     const toast = $("#simpleToast");
     const toastMessage = $("#toastMsg");
 
+    const email = $("#email").val();
+    const password = $("#password").val();
+
     $.ajax({
-        url: "http://localhost:8080/auth/customer",
+        url: "http://localhost:8080/auth/customer?email="+ email +"&password="+ password,
         method: "POST",
-        data: JSON.stringify({
-            email: $("#email").val(),
-            password: $("#password").val(),
-        }),
         contentType: "application/json",
     })
         .done(function (data) {
