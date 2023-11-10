@@ -1,8 +1,10 @@
 package com.example.signature_cuisine.controllers;
 
 import com.example.signature_cuisine.exception.ErrorResponse;
+import com.example.signature_cuisine.model.Admin;
 import com.example.signature_cuisine.model.Customer;
 import com.example.signature_cuisine.model.Staff;
+import com.example.signature_cuisine.services.impl.registration.RegisterServiceAdminImpl;
 import com.example.signature_cuisine.services.impl.registration.RegisterServiceCustomerImpl;
 import com.example.signature_cuisine.services.impl.registration.RegisterServiceStaffImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ public class RegistrationController {
 
     @Autowired
     private RegisterServiceStaffImpl registerServiceStaff;
+
+    @Autowired
+    private RegisterServiceAdminImpl registerServiceAdmin;
 
     @PostMapping("/customer")
     public ResponseEntity<?> registerCustomer(@RequestBody Customer customer) {
@@ -37,6 +42,17 @@ public class RegistrationController {
             boolean isRegistered = registerServiceStaff.register(staff.getFullName(), staff.getEmail(), staff.getPassword());
 
             return getStringResponseEntity(isRegistered, "Staff");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(e.getMessage()));
+        }
+    }
+
+    @PostMapping("/admin")
+    public ResponseEntity<?> registerAdmin(@RequestBody Admin admin) {
+        try {
+            boolean isRegistered = registerServiceAdmin.register(admin.getFullName(), admin.getEmail(), admin.getPassword());
+
+            return getStringResponseEntity(isRegistered, "Admin");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(e.getMessage()));
         }
