@@ -42,6 +42,7 @@ $("#adminSignIn").submit(function (event) {
                 toast.fadeOut();
                 localStorage.setItem("loggedInStaff", "true")
                 localStorage.setItem("staffLevel", level.toString());
+                localStorage.setItem("staffEmail", email);
                 window.location.href = "/dashboard";
             }, 3000);
         })
