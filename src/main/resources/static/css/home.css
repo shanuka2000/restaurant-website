@@ -319,7 +319,7 @@
     gap: 10px;
 }
 
-.contact-block label input {
+.contact-block label input, .contact-block label textarea {
     height: 2.5rem;
     padding: 0 10px;
     outline: none;
@@ -327,7 +327,13 @@
     border-radius: 5px;
 }
 
-.contact-block:last-child input {
+.contact-block label textarea {
+    height: 6rem;
+    resize: none;
+    padding: 10px 10px;
+}
+
+.contact-block:last-child button {
     background-color: black;
     width: 10rem;
     height: 2.5rem;
