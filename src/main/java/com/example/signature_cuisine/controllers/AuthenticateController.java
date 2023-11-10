@@ -3,7 +3,7 @@ package com.example.signature_cuisine.controllers;
 import com.example.signature_cuisine.exception.ErrorResponse;
 import com.example.signature_cuisine.services.impl.authentication.AuthenticateServiceAdminImpl;
 import com.example.signature_cuisine.services.impl.authentication.AuthenticateServiceCustomerImpl;
-import com.example.signature_cuisine.services.impl.authentication.AuthenticationStaffImpl;
+import com.example.signature_cuisine.services.impl.authentication.AuthenticationServiceStaffImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ public class AuthenticateController {
     private AuthenticateServiceCustomerImpl authenticateServiceCustomer;
 
     @Autowired
-    private AuthenticationStaffImpl authenticateStaff;
+    private AuthenticationServiceStaffImpl authenticationServiceStaff;
 
     @Autowired
     private AuthenticateServiceAdminImpl authenticateServiceAdmin;
@@ -38,7 +38,7 @@ public class AuthenticateController {
     public ResponseEntity<?> authenticateStaff(@RequestParam("email") String email, @RequestParam("password") String password) {
 
         try {
-            boolean isAuthenticated = authenticateStaff.authenticate(email, password);
+            boolean isAuthenticated = authenticationServiceStaff.authenticate(email, password);
 
             return getStringResponseEntity(isAuthenticated);
 
