@@ -9,4 +9,5 @@ import java.util.List;
 public interface CustomerQueryRepository extends JpaRepository<CustomerQueryEntity, Long> {
     CustomerQueryEntity save(CustomerQueryEntity customerQueryEntity);
     List<CustomerQueryEntity> findAll();
+    long count();
 }

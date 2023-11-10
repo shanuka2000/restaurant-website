@@ -38,4 +38,13 @@ public class CustomerQueryServiceImpl implements CustomerQueryService {
             throw new Exception("Internal server error occurred. Please contact the administrator.");
         }
     }
+
+    @Override
+    public int getCount() throws Exception {
+        try {
+            return (int) customerQueryRepository.count();
+        } catch (Exception e) {
+            throw new Exception("Internal server error occurred. Please contact the administrator.");
+        }
+    }
 }

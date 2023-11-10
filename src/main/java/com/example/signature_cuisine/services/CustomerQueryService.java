@@ -8,4 +8,5 @@ import java.util.List;
 public interface CustomerQueryService {
     boolean save(CustomerQuery customerQuery) throws Exception;
     List<CustomerQueryEntity> getAll() throws Exception;
+    int getCount() throws Exception;
 }
