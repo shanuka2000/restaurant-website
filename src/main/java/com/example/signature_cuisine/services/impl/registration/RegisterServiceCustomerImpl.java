@@ -22,11 +22,9 @@ public class RegisterServiceCustomerImpl implements RegisterService {
         try {
             CustomerEntity customerEntity = new CustomerEntity();
 
-            String hashedPassword = passwordHash.hashPassword(password);
-
             customerEntity.setFullName(fullName);
             customerEntity.setEmail(email);
-            customerEntity.setPassword(hashedPassword);
+            customerEntity.setPassword(passwordHash.hashPassword(password));
 
             if (validateEmail.isValid(email)) {
                 return customerRepository.save(customerEntity) != null;
