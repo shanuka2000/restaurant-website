@@ -61,6 +61,18 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
+    public List<ReservationEntity> getByDate(String date) throws Exception {
+        try {
+            Date processedDate = dateProcess.processDate(date);
+
+            return reservationRepository.findAllByReservationDate(processedDate);
+
+        } catch (Exception e) {
+            throw new Exception("Internal server error occurred. Please contact the administrator.");
+        }
+    }
+
+    @Override
     public boolean isReservable(String reservationDate, String reservationType, int guestCount) throws Exception {
         try {
             Date processedDate = dateProcess.processDate(reservationDate);
@@ -83,4 +95,5 @@ public class ReservationServiceImpl implements ReservationService {
             throw new Exception("Internal server error occurred. Please contact the administrator.");
         }
     }
+
 }

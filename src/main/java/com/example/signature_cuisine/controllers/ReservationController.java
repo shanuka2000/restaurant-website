@@ -33,6 +33,21 @@ public class ReservationController {
         }
     }
 
+    @GetMapping("/byDate")
+    public ResponseEntity<?> getReservationsByDate(@RequestParam("date") String date) {
+        try {
+            List<ReservationEntity> reservationList = reservationService.getByDate(date);
+
+            if (reservationList.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.OK).body("Empty LIst");
+            } else {
+                return ResponseEntity.status(HttpStatus.OK).body(reservationList);
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(e.getMessage()));
+        }
+    }
+
     @GetMapping("/count")
     public ResponseEntity<?> getReservationCount(@RequestParam("date") String date) {
         try {

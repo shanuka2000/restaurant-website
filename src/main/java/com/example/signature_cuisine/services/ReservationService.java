@@ -10,4 +10,5 @@ public interface ReservationService {
     List<ReservationEntity> getAll() throws Exception;
     boolean isReservable(String reservationDate, String reservationType, int guestCount) throws Exception;
     int getCount(String date) throws Exception;
+    List<ReservationEntity> getByDate(String date) throws Exception;
 }

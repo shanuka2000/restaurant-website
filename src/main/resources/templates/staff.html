@@ -23,6 +23,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="#resHisToday">
+                        Reservations for the day
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
+                </li>
+                <li>
                     <a href="#resHis">
                         Reservation History
                         <ion-icon name="chevron-forward-outline"></ion-icon>
@@ -91,6 +97,24 @@
                                 </tr>
                             </thead>
                             <tbody id="queryBody"></tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="bookings-wrapper" id="resHisToday">
+                    <h2>Reservations for the day</h2>
+                    <div class="bookings-items">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Reservation ID</th>
+                                <th>Reservation Name</th>
+                                <th>Contact</th>
+                                <th>Reservation Type</th>
+                                <th>Number of Guests</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody id="bookingBodyT"></tbody>
                         </table>
                     </div>
                 </section>

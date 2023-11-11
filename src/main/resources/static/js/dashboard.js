@@ -141,7 +141,7 @@ function getTodayReservations() {
 
     const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
 
-    $.get("http://localhost:8080/reservations/byDate?date=2023-11-11")
+    $.get("http://localhost:8080/reservations/byDate?date="+formattedDate)
         .done(function (data) {
             console.log(data)
 
