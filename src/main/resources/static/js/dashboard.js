@@ -68,6 +68,67 @@ function setTicketCount() {
         })
 }
 
+function getQueryList(displayAll) {
+    $.get("http://localhost:8080/query")
+        .done(function (data) {
+            console.log(data)
+
+            let counter = 0
+
+            $.each(data, function (index, item) {
+
+                if (!displayAll && counter >= 3) {
+                    return false;
+                }
+
+                let queryItemHtml =
+                    '<tr>' +
+                        '<td>#' + item.id + '</td>' +
+                        '<td>' + item.fullName + '</td>' +
+                        '<td id="shortenText">' + item.message + '</td>' +
+                    '</tr>'
+                $("#queryBody").append(queryItemHtml);
+
+                counter++;
+            })
+        })
+        .fail(function (error) {
+            console.log(error)
+        })
+}
+
+function getReservations(displayAll) {
+    $.get("http://localhost:8080/reservations")
+        .done(function (data) {
+            console.log(data)
+
+            let counter = 0
+
+            $.each(data, function (index, item) {
+
+                if (!displayAll && counter >= 3) {
+                    return false;
+                }
+
+                let reservationItemHtml =
+                    '<tr>' +
+                        '<td>#' + item.id +  '</td>' +
+                        '<td>' + item.fullName + '</td>' +
+                        '<td>' + item.contactNumber + '</td>' +
+                        '<td>' + item.reservationType + '</td>' +
+                        '<td>' + item.numberOfGuest + '</td>' +
+                    '</tr>'
+
+                $("#bookingBody").append(reservationItemHtml);
+
+                counter++;
+            })
+        })
+        .fail(function (error) {
+            console.log(error)
+        })
+}
+
 $(document).ready(function () {
     $("#simpleToast").hide();
     $(".user-details-wrapper").hide();
@@ -91,9 +152,18 @@ $(document).ready(function () {
     if (loginLevel) {
         if (loginLevel === "1") {
             $("#clearanceLevel").text("Admin");
+            $("#lockedItem01, #lockedItem02").hide();
+            getQueryList(true)
+            getReservations(true);
         } else {
             $("#clearanceLevel").text("Staff");
             $(".register-wrapper").hide();
+            getQueryList(false)
+            getReservations(false);
+            $(".query-wrapper, .bookings-wrapper").css({
+                "opacity": "20%",
+            })
+            $("#lockedItem01, #lockedItem02").show();
         }
     }
 

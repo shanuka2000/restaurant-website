@@ -180,9 +180,81 @@ nav form ion-icon {
 }
 
 .query-wrapper, .bookings-wrapper {
-    margin: auto;
+    margin: 5% auto 5% auto;
     width: 90%;
     height: auto;
+}
+
+.query-wrapper h2, .bookings-wrapper h2 {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.query-wrapper h2 span, .bookings-wrapper h2 span {
+    display: flex;
+    align-items: center;
+}
+
+.query-items, .bookings-items {
+    max-height: 400px;
+    height: fit-content;
+    overflow-y: scroll;
+}
+
+.locked-item {
+    font-size: 40px;
+}
+
+.query-items::-webkit-scrollbar-track,
+.bookings-items::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+.query-items::-webkit-scrollbar,
+.bookings-items::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+.query-items::-webkit-scrollbar-thumb,
+.bookings-items::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
+
+.query-items table, .bookings-items table {
+    width: 100%;
+}
+
+.query-items table tr,
+.bookings-items table tr {
+    display: flex;
+}
+
+.query-items table thead th,
+.query-items table tbody td,
+.bookings-items table thead th,
+.bookings-items table tbody td {
+    width: 25%;
+    padding: 0 2px 0 5px;
+    margin: 10px 0;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.bookings-items table thead th,
+.bookings-items table tbody td {
+    width: 16.6% !important;
+}
+
+.query-items table tbody tr:nth-child(odd),
+.bookings-items table tbody tr:nth-child(odd) {
+    background-color: rgba(75, 85, 99, 0.32);
 }
 
 .furtherImpl {
@@ -225,6 +297,7 @@ nav form ion-icon {
 .register-wrapper a {
     width: 100%;
     border: 2px solid black;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
