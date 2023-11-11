@@ -85,7 +85,7 @@ $(document).ready(function () {
         const firstLetter = username.charAt(0);
 
         $("#username").text(username);
-        $(".avatar").text(firstLetter);
+        $(".avatar").text(firstLetter.toUpperCase());
     }
 
     if (loginLevel) {
@@ -93,6 +93,7 @@ $(document).ready(function () {
             $("#clearanceLevel").text("Admin");
         } else {
             $("#clearanceLevel").text("Staff");
+            $(".register-wrapper").hide();
         }
     }
 
