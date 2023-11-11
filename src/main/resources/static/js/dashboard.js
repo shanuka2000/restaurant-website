@@ -129,6 +129,41 @@ function getReservations(displayAll) {
         })
 }
 
+function getTodayReservations() {
+    const today = new Date();
+
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+
+    const toast = $("#simpleToast");
+    const toastMessage = $("#toastMsg");
+
+    const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
+
+    $.get("http://localhost:8080/reservations/byDate?date=2023-11-11")
+        .done(function (data) {
+            console.log(data)
+
+            $.each(data, function (index, item) {
+
+                let reservationItemHtml =
+                    '<tr>' +
+                    '<td>#' + item.id +  '</td>' +
+                    '<td>' + item.fullName + '</td>' +
+                    '<td>' + item.contactNumber + '</td>' +
+                    '<td>' + item.reservationType + '</td>' +
+                    '<td>' + item.numberOfGuest + '</td>' +
+                    '</tr>'
+
+                $("#bookingBodyT").append(reservationItemHtml);
+            })
+        })
+        .fail(function (error) {
+            console.log(error)
+        })
+}
+
 $(document).ready(function () {
     $("#simpleToast").hide();
     $(".user-details-wrapper").hide();
@@ -163,6 +198,9 @@ $(document).ready(function () {
             $(".query-wrapper, .bookings-wrapper").css({
                 "opacity": "20%",
             })
+            $("#resHisToday").css({
+                "opacity": "100%",
+            })
             $("#lockedItem01, #lockedItem02").show();
         }
     }
@@ -170,6 +208,7 @@ $(document).ready(function () {
     setReservationCount();
     setUserCount();
     setTicketCount();
+    getTodayReservations();
 })
 
 $("#profileBtn").click(function () {
