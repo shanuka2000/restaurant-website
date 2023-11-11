@@ -47,6 +47,15 @@ aside p {
     color: white;
 }
 
+.side-links li a {
+    flex: 1;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
 .side-links li:hover {
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.08);

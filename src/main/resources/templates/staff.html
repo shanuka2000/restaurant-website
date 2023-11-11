@@ -15,15 +15,21 @@
             <ul class="side-links">
                 <li>
                     Dashboard
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
                 </li>
                 <li>
-                    Customer Query
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    <a href="#qurAll">
+                        Customer Query
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="#resHis">
+                        Reservation History
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
                 </li>
                 <li>
                     About
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
                 </li>
             </ul>
         </aside>
@@ -72,7 +78,7 @@
                 <section class="register-wrapper">
                     <a href="/staff-register">Register a new Staff Member</a>
                 </section>
-                <section class="query-wrapper">
+                <section class="query-wrapper" id="qurAll">
                     <h2>Customer Query <span id="lockedItem01"><ion-icon name="lock-closed-outline"></ion-icon></span></h2>
                     <div class="query-items">
                         <table>
@@ -88,7 +94,7 @@
                         </table>
                     </div>
                 </section>
-                <section class="bookings-wrapper">
+                <section class="bookings-wrapper" id="resHis">
                     <h2>Reservation History <span id="lockedItem02"><ion-icon name="lock-closed-outline"></ion-icon></span></h2>
                     <div class="bookings-items">
                         <table>
